@@ -7,12 +7,12 @@ import os
 #############################
 # DataSet Path
 #############################s
-target_signals_dir = '../../DataSet/mancini_piano/piano'
+target_signals_dir = '/content/drive/MyDrive/Dataset/Emotional Speech Audio/Audios/happy'
 #############################
 # Model Params
 #############################
 model_prefix = 'exp1' # name of the model to be saved
-n_iterations = 100000
+n_iterations = 1000
 use_batchnorm = False
 lr_g = 1e-4
 lr_d = 3e-4 # you can use with discriminator having a larger learning rate than generator instead of using n_critic updates ttur https://arxiv.org/abs/1706.08500

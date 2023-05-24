@@ -8,7 +8,7 @@ from tqdm import tqdm
 
 
 class WaveGan_GP(object):
-    def __init__(self, train_loader, val_loader):
+    def __init__(self, train_loader):
         super(WaveGan_GP, self).__init__()
         self.g_cost = []
         self.train_d_cost = []
@@ -40,7 +40,7 @@ class WaveGan_GP(object):
         )
 
         self.train_loader = train_loader
-        self.val_loader = val_loader
+        # self.val_loader = val_loader
 
         self.validate = validate
         self.n_samples_per_batch = len(train_loader)
@@ -216,10 +216,10 @@ class WaveGan_GP(object):
 
 
 if __name__ == "__main__":
-    train_loader = WavDataLoader(os.path.join(target_signals_dir, "train"))
-    val_loader = WavDataLoader(os.path.join(target_signals_dir, "valid"))
+    train_loader = WavDataLoader(target_signals_dir)
+    # val_loader = WavDataLoader(os.path.join(target_signals_dir, "valid"))
 
-    wave_gan = WaveGan_GP(train_loader, val_loader)
+    wave_gan = WaveGan_GP(train_loader)
     wave_gan.train()
     visualize_loss(
         wave_gan.g_cost, wave_gan.valid_g_cost, "Train", "Val", "Negative Critic Loss"

@@ -234,13 +234,13 @@ class WavDataLoader:
         return self.numpy_to_tensor(x["single"])
 
 
-if __name__ == "__main__":
-    # For debugging purposes
-    import time 
-    start = time.time()
-    print(time.time() - start)
-    train_loader = WavDataLoader(os.path.join("piano", "train"), "wav")
-    start = time.time()
-    for i in range(7):
-        x = next(train_loader)
-    print(time.time() - start)
+# if __name__ == "__main__":
+#     # For debugging purposes
+#     import time 
+#     start = time.time()
+#     print(time.time() - start)
+#     train_loader = WavDataLoader(os.path.join("piano", "train"), "wav")
+#     start = time.time()
+#     for i in range(7):
+#         x = next(train_loader)
+#     print(time.time() - start)
