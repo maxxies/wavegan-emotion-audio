@@ -27,6 +27,7 @@ def get_recursive_files(folderPath, ext):
         elif file.endswith(ext):
             outFiles.append(os.path.join(folderPath, file))
 
+    print("Found %i files" % len(outFiles))
     return outFiles
 
 
