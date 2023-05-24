@@ -24,11 +24,12 @@ def get_recursive_files(folderPath, ext):
     for file in results:
         if os.path.isdir(os.path.join(folderPath, file)):
             outFiles += get_recursive_files(os.path.join(folderPath, file), ext)
-        elif file.endswith(ext):
+        elif os.path.isfile(os.path.join(folderPath, file)):
             outFiles.append(os.path.join(folderPath, file))
-
     print("Found %i files" % len(outFiles))
     return outFiles
+
+
 
 
 def make_path(output_path):
