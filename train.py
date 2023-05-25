@@ -224,6 +224,7 @@ if __name__ == "__main__":
     visualize_loss(
         wave_gan.g_cost, wave_gan.train_d_cost, "Generator", "Discriminator", "Negative Critic Loss"
     )
+    
     # visualize_loss_train(
     #     wave_gan.g_cost, "Train", "Val", "Negative Critic Loss"
     # )

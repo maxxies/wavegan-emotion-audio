@@ -11,8 +11,8 @@ target_signals_dir = '/content/drive/MyDrive/Dataset/Emotional Speech Audio/Audi
 #############################
 # Model Params
 #############################
-model_prefix = 'exp1' # name of the model to be saved
-n_iterations = 10
+model_prefix = 'happy_exp1' # name of the model to be saved
+n_iterations = 10000
 use_batchnorm = False
 lr_g = 1e-4
 lr_d = 3e-4 # you can use with discriminator having a larger learning rate than generator instead of using n_critic updates ttur https://arxiv.org/abs/1706.08500
