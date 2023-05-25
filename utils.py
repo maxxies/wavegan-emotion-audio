@@ -14,6 +14,7 @@ import pescador
 import torch.nn as nn
 from torch.autograd import Variable
 from params import *
+import soundfile
 
 #############################
 # File Utils
@@ -49,7 +50,7 @@ def visualize_audio(audio_tensor, is_monphonic=False):
         plt.subplot(10, 2, i + 1)
         if is_monphonic:
             plt.title("Monophonic %i" % (i + 1))
-            librosa.display.waveplot(audio[0], sr=sampling_rate)
+            librosa.display.waveshow(audio[0], sr=sampling_rate)
         else:
             D = librosa.amplitude_to_db(np.abs(librosa.stft(audio[0])), ref=np.max)
             librosa.display.specshow(D, y_axis="linear")
@@ -171,7 +172,7 @@ def save_samples(epoch_samples, epoch):
     for idx, sample in enumerate(epoch_samples):
         output_path = os.path.join(sample_dir, "{}.wav".format(idx + 1))
         sample = sample[0]
-        librosa.output.write_wav(output_path, sample, sampling_rate)
+        soundfile.write(output_path, sample, sampling_rate)
 
 
 #############################
