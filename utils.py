@@ -70,10 +70,13 @@ def visualize_loss(loss_1, loss_2, first_legend, second_legend, y_label):
     plt.grid(True)
     plt.tight_layout()
     plt.legend()
-    plt.show()
+
     if not (os.path.isdir("visualization")):
         os.makedirs("visualization")
+
     plt.savefig("visualization/loss.png")
+
+    plt.show()
 
 def visualize_loss_train(loss_1, first_legend, y_label):
     plt.figure(figsize=(10, 5))
