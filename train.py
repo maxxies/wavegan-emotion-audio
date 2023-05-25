@@ -222,6 +222,9 @@ if __name__ == "__main__":
     wave_gan = WaveGan_GP(train_loader)
     wave_gan.train()
     visualize_loss(
-        wave_gan.g_cost, wave_gan.valid_g_cost, "Train", "Val", "Negative Critic Loss"
+        wave_gan.g_cost, wave_gan.train_d_cost, "Generator", "Discriminator", "Negative Critic Loss"
     )
+    # visualize_loss_train(
+    #     wave_gan.g_cost, "Train", "Val", "Negative Critic Loss"
+    # )
     latent_space_interpolation(wave_gan.generator, n_samples=5)

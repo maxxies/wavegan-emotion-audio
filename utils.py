@@ -75,6 +75,21 @@ def visualize_loss(loss_1, loss_2, first_legend, second_legend, y_label):
         os.makedirs("visualization")
     plt.savefig("visualization/loss.png")
 
+def visualize_loss_train(loss_1, first_legend, y_label):
+    plt.figure(figsize=(10, 5))
+    plt.title("{} Loss During Training".format(first_legend))
+    plt.plot(loss_1, label=first_legend)
+    plt.xlabel("iterations")
+    plt.ylabel(y_label)
+    plt.grid(True)
+    plt.tight_layout()
+    plt.legend()
+    plt.show()
+    if not (os.path.isdir("visualization")):
+        os.makedirs("visualization")
+    plt.savefig("visualization/loss.png")
+
+
 
 def latent_space_interpolation(model, n_samples=10):
     z_test = sample_noise(2)
